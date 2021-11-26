@@ -10,9 +10,6 @@ class PostagensController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var listPost = PostagensViewModel()
     
-    var titulo = [String]()
-    var mensagem = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,22 +20,19 @@ class PostagensController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func setup(){
         APIService().load(resource: PostagensModel.Get) { [weak self] result in
-              switch result {
-              case .success(let orders):
-                  self?.listPost.postagensViewModel = orders
-               self?.minhatabview.reloadData()
-           case .failure(let error):
-               print("Error ", error)
-           }
-       }
+            switch result {
+            case .success(let orders):
+                self?.listPost.postagensViewModel = orders
+                self?.minhatabview.reloadData()
+            case .failure(let error):
+                print("Error ", error)
+            }
+        }
     }
     
-    
-    /// Tamanhop table vcelula
+    /// Tamanho Cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 72
-        
+        return 180
     }
     
     
@@ -51,30 +45,24 @@ class PostagensController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     //Quantidade de celulas por categoria
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.listPost.postagensViewModel.count
-        
     }
     
-    //Alimentar a celula com id
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.minhatabview.reloadData()
+    }
+    
+    
+    //Alimentar a celula
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for:
                                                     indexPath) as! PostagensCelula
-        
         let vm = self.listPost.postagensViewModel(at: indexPath.row)
         
-//        if vm.completed {
-//            self.swich = true
-//        }else{
-//            
-//        }
-        
-        //  cell.imagem_celula
         cell.titulo.text = vm.title
-        
         cell.mensagem.text = vm.body
-        
-        
         
         return cell
     }

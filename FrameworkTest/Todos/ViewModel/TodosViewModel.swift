@@ -1,32 +1,31 @@
-//
-//  PostagensViewModel.swift
 //  FrameworkTest
-//
 //  Created by Juninho on 26/11/21.
-//
 
 import Foundation
 
 class TodosViewModel {
     
-    var TodosViewModel: [ImagemUrl]
+    var todosViewModel: [TodosModel]
     init() {
-        self.TodosViewModel = [ImagemUrl]()
+        self.todosViewModel = [TodosModel]()
     }
 }
 
 extension TodosViewModel {
-    func TodosViewModel(at index:Int) -> ImagemUrl   {
-        return self.TodosViewModel[index]
+    func todosViewModel(at index:Int) -> TodosModel   {
+        return self.todosViewModel[index]
     }
 }
 
-struct UrlViewModel {
-    let url: ImagemUrl
+struct AllModel {
+    let all: TodosModel
 }
 
-extension UrlViewModel{
-    var link: String{
-        return self.url.link
+extension AllModel{
+    var title: String{
+        return self.all.title
+    }
+    var completed: Bool{
+        return self.all.completed
     }
 }

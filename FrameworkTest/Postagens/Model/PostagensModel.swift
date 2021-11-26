@@ -1,18 +1,13 @@
-//
 //  PostagensModel.swift
 //  FrameworkTest
-//
 //  Created by Juninho on 25/11/21.
 
-
 import Foundation
-
 
 struct PostagensModel: Codable {
     let title: String
     let body: String
 }
-
 
 extension PostagensModel {
     // Resgatar Api Json com forma de OBJ

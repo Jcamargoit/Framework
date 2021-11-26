@@ -1,9 +1,5 @@
-//
 //  APIService.swift
-//  Banco de imagens
-//
-//  Created by Reedy on 26/11/21.
-//
+//  Created by Juninho on 25/11/21.
 
 import Foundation
 
@@ -20,7 +16,7 @@ struct Resource<T: Codable> {
     let url: URL
     var httpMethod: HttpMethod = .get
     var body: Data? = nil
-
+    
 }
 
 extension Resource {
@@ -32,7 +28,6 @@ extension Resource {
 class APIService {
     
     func load<T>(resource: Resource<T>, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        
         var request = URLRequest(url: resource.url)
         request.httpMethod = resource.httpMethod.rawValue
         request.httpBody = resource.body

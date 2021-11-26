@@ -1,26 +1,15 @@
-//  CelulaDados.swift
-//  DigDu
-//  Created by Juninho on 21/06/21.
-
 import UIKit
 
 class TodosCelula: UITableViewCell {
     
-
-    @IBOutlet weak var titulo: UILabel!
-    @IBOutlet weak var complete: UITextView!
-    
+    @IBOutlet weak var titulo: UITextView!
+    @IBOutlet weak var sw: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
-    
 }

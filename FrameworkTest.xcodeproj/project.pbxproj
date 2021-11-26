@@ -123,7 +123,7 @@
 		F2974E63274FC93900EA62C4 /* FrameworkTest */ = {
 			isa = PBXGroup;
 			children = (
-				F2D0B62A27516EBF00284864 /* API Service */,
+				F2D0B62A27516EBF00284864 /* APIService */,
 				F2974E94274FCCD300EA62C4 /* Postagens */,
 				F2974E95274FCCE100EA62C4 /* Albuns */,
 				F2974E96274FCCF800EA62C4 /* Todos */,
@@ -187,12 +187,12 @@
 			path = Todos;
 			sourceTree = "<group>";
 		};
-		F2D0B62A27516EBF00284864 /* API Service */ = {
+		F2D0B62A27516EBF00284864 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
 				F2D0B62B27516EF400284864 /* APIService.swift */,
 			);
-			path = "API Service";
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		F2D0B62D27516FAF00284864 /* CustomCell */ = {
